@@ -1,8 +1,16 @@
-<h1>These are my Lists!<h1>
-<ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Create a list of your <strong>favourite</strong> movies!</h1>
+    <p>store bookmarks, comments ratings and more...</p>
+    <%= link_to "Create a new list", new_list_path, class: "btn btn-flat" %>
+  </div>
+</div>
+<br>
+<div class="main-container">
+  <div class="cards">
   <% @lists.each do |list| %>
-    <li><%= link_to "#{list.name}" , list_path(list) %></li>
+  <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
+  <%= link_to "#{list.name}" , list_path(list), class: "btn btn-flat" %>
+  </div>
   <% end %>
-</ul>
-
-<p><%= link_to "add new list", new_list_path %></p>
+  </div>

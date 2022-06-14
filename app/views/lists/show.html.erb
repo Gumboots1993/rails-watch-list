@@ -3,7 +3,16 @@
 
 <ul class="list-group">
   <% @list.bookmarks.each do |bookmark| %>
-    <li class="list-group-item"><%= bookmark.comment %>
+    <li class="list-group-item"><%= "Comment: #{bookmark.comment}"  %>
+    <br>
+    <%= "Title: #{Movie.find(bookmark.movie_id).title}" %>
+    <br>
+    <%= "Overview: #{Movie.find(bookmark.movie_id).overview}" %>
+    <br>
+    <%= Movie.find(bookmark.movie_id).poster_url %>
+    <br>
+    <%= "Rating: #{Movie.find(bookmark.movie_id).rating}" %>
+    <br>
      <%= link_to "Remove",
                   bookmark_path(bookmark),
                   method: :delete,
